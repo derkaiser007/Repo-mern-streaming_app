@@ -1,0 +1,34 @@
+mkdir mern-streaming_app
+cd mern-streaming_app
+
+mkdir backend
+cd backend
+
+npm init -y
+npm install express mongoose dotenv multer cors typescript ts-node-dev @types/express @types/cors @types/multer
+npx tsc --init
+
+In tsconfig.json:
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
+
+cd backend
+npx tsc
+node dist/server.js
+
+npx create-react-app frontend --template typescript
+cd frontend
+npm install axios
+
+npm start
